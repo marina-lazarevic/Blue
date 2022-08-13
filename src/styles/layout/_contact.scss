@@ -1,0 +1,166 @@
+@use '../abstracts/index' as *;
+
+.contact {
+    background: $primary-bg url('../assets/basketball.png') no-repeat bottom right;
+    background-size: auto 100%;
+
+    &__container {
+        @include d-flex(center, center);
+        flex-direction: column;
+        height: 80vh;
+        max-height: 745px;
+        padding: $spacing-sm;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    .button {
+        margin-top: 2.5em;
+    }
+}
+
+.footer {
+    @include d-flex(flex-end, center);
+    padding: 0 $spacing-sm;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+
+    @media screen and (min-width: $screen-lg) {
+        padding: 0 8.48vw;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    &__copyright,
+    &__nav-container {
+        width: 100%;
+        z-index: 2;
+        @media screen and (min-width: $screen-lg) {
+            width: fit-content;
+        }
+    }
+
+    &__nav {
+        @media screen and (min-width: $screen-xxl) {
+            @include d-flex(center, flex-end);
+        }
+    }
+
+    .logo {
+        width: clamp(200px, 30vw, 245px);
+    }
+
+    &__text {
+        padding: 2.5em 0;
+        a {
+            color: $highlight;
+            text-decoration: underline!important;
+        }
+
+        @media screen and (min-width: $screen-lg) {
+            margin: 1.5em 0 0;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 1px;
+                width: 37vw;
+                max-width: 649px;
+                background-color: $mid-gray
+            }
+        }
+    }
+
+    &__nav-container > &__text {
+        @media screen and (min-width: $screen-lg) {
+            text-align: right;
+        }
+
+        &::before {
+            left: unset;
+            right: 0;
+        } 
+    }
+
+    &__nav-link {
+        @include roboto-16;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 0 7px;
+        padding: 7px 0;
+        @include underline($highlight);
+
+        @media screen and (min-width: $screen-lg) {
+            margin: 0 12px;
+            padding: 0;
+        }
+    }
+
+    &__socials {
+        margin-top: 20px;
+        @media screen and (min-width: $screen-lg) {
+            text-align: right;
+        }
+
+        @media screen and (min-width: $screen-lg) {
+            margin-left: 37px;
+        }
+
+        @media screen and (min-width: $screen-xxl) {
+            margin-top: 0;
+        }
+    }
+
+    &__socials-link {
+        @include d-flex(center, center);
+        display: inline-flex;
+        height: 38px;
+        width: 38px;
+        border: 1px solid $primary-light;
+        @include underline($highlight);
+        transition: border-color .2s ease-out;
+
+        &::before {
+            z-index: -1;
+            height: 100%;
+        }
+
+        &:hover {
+            border-color: $highlight;
+        }
+
+        &:nth-of-type(2){
+            margin: 0 6px;
+        }
+    }
+
+    &__socials-icon {
+        max-height: 20px;
+
+        path {
+            fill: $primary-light;
+        }
+    }
+
+    &__img {
+        order: 3;
+        width: 50%;
+        max-width: 344px;
+        display: block;
+        margin: 30px auto 0;
+        filter: drop-shadow(-1px -23px 268px $highlight);
+
+        @media screen and (min-width: $screen-lg) {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -3,3 +3,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
 $primary-font: 'Roboto';
+
+@mixin roboto-16 {
+    font-size: 1rem;
+    line-height: 1.56;
+    color: $primary-light;
+}
+
+@mixin roboto-40 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    line-height: 1.25;
+    font-weight: 300;
+    color: $primary-light;
+}
+
+h2 {
+    @include roboto-40();
+}
+
+p {
+    @include roboto-16();
+    font-weight: 300;
+}
+
+.highlight {
+    color: $highlight;
+}

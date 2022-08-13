@@ -1,0 +1,41 @@
+@use '../abstracts/index' as *;
+
+.button {
+    @include roboto-16;
+    font-weight: 500;
+    color: $primary-light;
+    line-height: 1;
+    width: 226px;
+    text-align: center;
+    padding: 22px 0;
+    border: 1px solid;
+    @include underline(darken($highlight, 10%));
+    transition: all .2s ease-out;
+    z-index: 2;
+    overflow: hidden;
+
+    &::before {
+        z-index: -1;
+        height: 100%;
+        clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        transition: width .3s ease-out;
+    }
+
+    &--primary {
+        background-color: $highlight;
+        border-color: $highlight;
+    }
+
+    &--secondary {
+        background: none;
+        border-color: $primary-light;
+    }
+
+    &:hover {
+        // color: $highlight;
+        border-color: darken($highlight, 10%);
+        &::before {
+            width: 125%;
+        }
+    }
+}
