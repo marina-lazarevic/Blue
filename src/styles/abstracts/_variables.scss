@@ -1,0 +1,20 @@
+//------------------ COLORS ------------------//
+
+$primary-light: #ffffff;
+$primary-bg: #232529;
+$dark-bg: #23262b;
+$highlight: #00a6ca;
+$mid-gray: #5d5d5d;
+$header-bg: #252931;
+
+//------------------ BREAKPOINTS ------------------//
+
+$screen-sm: 30rem; //480px
+$screen-md: 48rem; //768px
+$screen-lg: 67.5rem; //1080px
+$screen-xl: 80rem; //1280px
+$screen-xxl: 120rem; //1920px
+
+//------------------ SPACING ------------------//
+
+$spacing-sm: clamp(1.25rem, 4vw, 1.85rem);
