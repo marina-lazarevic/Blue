@@ -10,6 +10,8 @@ import player from './assets/player.png';
 import ball from './assets/player-ball.png'
 
 import './js/slider';
+import './js/nav';
+
 import gsap from 'gsap';
 
 document.querySelector('#hero-img').src = hero_img;
@@ -31,3 +33,11 @@ document.querySelector('#goal-img').src = goal_img;
 document.querySelector('#close-popup').addEventListener('click', () => {
         document.querySelector('#popup').style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
 })
+
+let hero_margin = () => {
+    let hero_margin_top = document.querySelector('#header').offsetHeight;
+    document.querySelector('#hero').style.marginTop = `${hero_margin_top}px`;
+}
+
+window.addEventListener('resize', hero_margin)
+window.addEventListener('load', hero_margin)

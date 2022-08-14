@@ -1,0 +1,25 @@
+@use '../abstracts/index' as *;
+
+.header {
+    @include d-flex(center, space-between);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacing-sm;
+    background-color: $header-bg;
+    z-index: 10;
+    border-bottom: 1px solid $mid-gray;
+
+    @media screen and (min-width: $screen-xl) {
+        padding: 0 $spacing-lg;
+    }
+
+    &__branding-wrapper {
+        z-index: 2;
+    }
+
+    &__branding {
+        width: clamp(150px, 30vw, 245px);
+    }
+}

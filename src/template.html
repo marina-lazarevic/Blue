@@ -7,6 +7,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <%= require('html-loader!./partials/header.html').default %>
     <main>
       <%= require('html-loader!./partials/hero.html').default %>
       <%= require('html-loader!./partials/sports.html').default %>
