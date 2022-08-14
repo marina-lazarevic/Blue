@@ -1,0 +1,120 @@
+@use '../abstracts/index' as *;
+
+.services {
+    padding: 0 $spacing-sm 150px;
+    position: relative;
+
+    @media screen and (min-width: $screen-lg) {
+        padding: 0 6.9vw 219px 15.625vw;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+        padding-right: 8.2vw;
+    }
+
+    &__title-line {
+        display: block;
+    }
+
+    &__card-wrapper {
+        @include d-flex(flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 41px 48px;
+        margin: 54px 0 48px;
+    }
+
+    .card {
+        padding: 30px;
+        height: 249px;
+        width: 100%;
+        background-color: $dark-bg;
+        @include d-flex(flex-start, center);
+        flex-direction: column;
+
+        @media screen and (min-width: $screen-md) {
+            max-width: 256px;
+
+            &:first-of-type {
+                overflow-y: auto;
+                justify-content: flex-start;
+    
+                &::-webkit-scrollbar {
+                    width: 3px;
+                  }
+                  
+                &::-webkit-scrollbar-track {
+                    background: none;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                    background: rgba($highlight, 0);
+                }
+    
+                &:hover::-webkit-scrollbar-thumb {
+                    background: rgba($highlight, .6);
+                }
+            }
+        }
+
+        @media screen and (min-width: $screen-xxl) {
+            max-width: 317px;
+
+            &:first-of-type {
+                overflow: visible;
+            }
+        }
+
+        &__title {
+            @include roboto-20;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        &__text {
+            @include roboto-16;
+            @include lato;
+            margin-top: 0.68em;
+            color: #fefefe;
+        }
+    }
+
+    .button {
+        &--secondary {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .squares {
+        left: 0;
+        width: auto;
+        height: 150px;
+        top: -150px;
+
+        @media screen and (min-width: $screen-lg) {
+            height: initial;
+            top: -354px;
+        }
+    }
+
+    .player-img {
+        position: absolute;
+        height: fit-content;
+        max-width: 781px;
+        right: 0;
+        top: -15%;
+        z-index: -1;
+
+        &__player {
+            width: 100%;
+            height: auto;
+        }
+
+        &__ball {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+        }
+    }
+}

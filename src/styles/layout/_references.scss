@@ -1,7 +1,6 @@
 @use '../abstracts/index' as *;
 
 .references {
-    margin-top: 100vh;
     padding: 0 $spacing-sm;
     margin-bottom: 150px;
     position: relative;
@@ -193,7 +192,7 @@
         position: absolute;
         z-index: -1;
         left: 0;
-        top: -30%;
+        top: -20%;
         max-width: 847px;
         @media screen and (min-width: $screen-md) {
             top: -45%;

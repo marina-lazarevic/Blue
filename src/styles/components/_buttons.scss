@@ -9,7 +9,7 @@
     text-align: center;
     padding: 22px 0;
     border: 1px solid;
-    @include underline(darken($highlight, 10%));
+    @include underline($highlight);
     transition: all .2s ease-out;
     z-index: 2;
     overflow: hidden;
@@ -32,8 +32,7 @@
     }
 
     &:hover {
-        // color: $highlight;
-        border-color: darken($highlight, 10%);
+        border-color: $highlight;
         &::before {
             width: 125%;
         }
