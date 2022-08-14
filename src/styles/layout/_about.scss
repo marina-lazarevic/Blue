@@ -6,8 +6,9 @@
     @include d-flex(center, flex-start);
     flex-wrap: wrap;
     gap: 4vw;
-    
-    @media screen and (min-width: $screen-lg) {
+    position: relative;
+
+    @media screen and (min-width: $screen-xl) {
         padding: 0 24.6875vw 240px 12.81vw;
         margin-bottom: 0;
     }
@@ -18,7 +19,7 @@
             width: 60%;
         }
         @media screen and (min-width: $screen-xl) {
-            width: 33.43vw;
+            width: 32vw;
         }
     }
 
@@ -29,7 +30,7 @@
             filter: drop-shadow(-63px 1px 112px $primary-bg);
         }
         @media screen and (min-width: $screen-xl) {
-            width: 24.21vw;
+            width: 23vw;
         }
     }
 
@@ -42,7 +43,7 @@
         width: 20vw;
         height: auto;
         left: 0;
-        top: 0;
+        top: -60px;
         z-index: -1;
         filter: drop-shadow(-109px -23px 278px $highlight);
 
