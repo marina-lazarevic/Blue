@@ -55,6 +55,13 @@ $primary-font: 'Roboto';
     color: $primary-light;
 }
 
+@mixin roboto-60 {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.16;
+    font-weight: 300;
+    color: $primary-light;
+}
+
 h1, h2 {
     &.bar {
         position: relative;

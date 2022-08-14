@@ -1,0 +1,133 @@
+@use '../abstracts/index' as *;
+
+.sports {
+    padding: 0 $spacing-sm 500px;
+    position: relative;
+
+    @media screen and (min-width: $screen-md) {
+        padding: 0 $spacing-sm 305px;
+    }
+
+    &__title-wrapper {
+        margin-bottom: 95px;
+        @media screen and (min-width: $screen-lg) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        @include roboto-60;
+    }
+
+    &__text {
+        @include roboto-16;
+        @include lato;
+        color: #fefefe;
+        max-width: 659.9px;
+        margin-top: 1.23em;
+        @media screen and (min-width: $screen-lg) {
+            margin: auto;
+        }
+    }
+
+    &__sport-container {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        max-width: 1047px;
+        margin: auto;
+
+        @media screen and (min-width: $screen-md) {
+            grid-template-columns: repeat(3, auto);
+        }
+
+        @media screen and (min-width: $screen-xl) {
+            grid-template-columns: repeat(5, auto);
+        }
+    }
+
+    &__sport {
+        @include d-flex(center, center);
+        flex-direction: column;
+        width: 100%;
+        padding: 25px;
+        border: 1px solid rgba($primary-light, .1);
+        border-left: none;
+        border-top: none;
+        &:nth-last-of-type(1) {
+            border-bottom: none;
+        }
+
+        &--right {
+            border-right: 1px solid $mid-gray
+        }
+        &--bottom {
+            border-bottom: 1px solid $mid-gray
+        }
+
+        $i: 1;
+
+        @media screen and (max-width: $screen-md) {
+            &:nth-of-type(even) {
+                border-right: none;
+            }
+
+            &:nth-last-of-type(2){
+                border-bottom: none;
+            }
+        }
+    
+        @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+            @for $i from 1 through 10 {
+                &:nth-of-type(#{$i * 3}){
+                    border-right: none;
+                }
+            }
+        }
+    
+        @media screen and (min-width: $screen-xl) {
+            @for $i from 1 through 5 {
+                &:nth-last-of-type(#{$i}){
+                    border-bottom: none;
+                }
+            }
+            @for $i from 1 through 10 {
+                &:nth-of-type(#{$i * 5}){
+                    border-right: none;
+                }
+            }
+        }
+
+        path {
+            fill: $primary-light;
+            transition: all .2s ease-out;
+            transform-origin: top;
+        }
+
+        &:hover {
+            path {
+                &.icon-highlight {
+                    fill: lighten($highlight, 5%)!important;
+                    transform: rotate(8deg) translate(3px, 3px);
+                }
+            }
+        }
+    }
+
+    &__sport-name {
+        @include roboto-20;
+        font-weight: 300;
+        text-transform: lowercase;
+        margin-top: .7em;
+    }
+
+    &__sport-icon {
+        max-height: 50px;
+        width: auto;
+    }
+
+    .star-bg {
+        @media screen and (min-width: $screen-lg) {
+            top: -100%;
+        }
+    }
+}
