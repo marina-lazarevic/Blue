@@ -1,5 +1,6 @@
 import './styles/main.scss';
 
+import hero_img from './assets/hero-img.png';
 import branding_img from './assets/branding.png';
 import about_img from './assets/about.png';
 import goal_img from './assets/goal.png';
@@ -9,6 +10,8 @@ import player from './assets/player.png';
 import ball from './assets/player-ball.png'
 
 import './js/slider';
+
+document.querySelector('#hero-img').src = hero_img;
 
 document.querySelectorAll('.logo').forEach(logo_img => {
     logo_img.src = branding_img;

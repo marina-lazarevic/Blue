@@ -63,10 +63,11 @@ $primary-font: 'Roboto';
 }
 
 h1, h2 {
-    &.bar {
+    &.bar, .bar {
         position: relative;
         width: fit-content;
         padding-right: 9px;
+        display: block;
 
         &::after {
             content: '';
@@ -78,6 +79,10 @@ h1, h2 {
             background-color: $highlight
         }
     }
+}
+
+h1 {
+    @include roboto-60();
 }
 
 h2 {

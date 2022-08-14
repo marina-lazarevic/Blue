@@ -9,7 +9,7 @@
     }
 
     &__title-wrapper {
-        margin-bottom: 95px;
+        margin: 75px 0 95px;
         @media screen and (min-width: $screen-lg) {
             text-align: center;
         }
@@ -125,9 +125,9 @@
         width: auto;
     }
 
-    .star-bg {
+    .star-img {
         @media screen and (min-width: $screen-lg) {
-            top: -100%;
+            top: -75%;
         }
     }
 }
