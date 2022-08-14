@@ -1,0 +1,133 @@
+@use '../abstracts/index' as *;
+
+.references {
+    padding: 0 $spacing-sm;
+    margin-bottom: 150px;
+    
+    @media screen and (min-width: $screen-xl) {
+        padding: 0 18.43vw 231px 21.92vw;
+        margin-bottom: 0;
+    }
+
+    &__testimonial {
+        background-color: $highlight;
+        text-align: center;
+        padding: 48px $spacing-sm 59px;
+        margin-bottom: 164px;
+        @media screen and (min-width: $screen-xl) {
+            padding: 48px 81px 59px;
+        }
+    }
+
+    &__text {
+        @include roboto-30;
+    }
+
+    .slider {
+        position: relative;
+        margin: 36px 0 49px;
+        @include d-flex(flex-start, center);
+        flex-direction: column;
+
+        &__slide {
+            @include d-flex(center, space-between);
+            flex-wrap: wrap-reverse;
+            gap: 4vw;
+            width: fit-content;
+        }
+
+        &__text {
+            @include lato;
+            font-weight: 300;
+            font-style: italic;
+            margin: 2.25em 0 2.68em;
+            position: relative;
+
+            &::before,
+            &::after {
+                display: none;
+                content: '"';
+                font-family: $primary-font;
+                font-size: clamp(2.3em, 15vw, 9.375em);
+                color: $highlight;
+                position: absolute;
+                font-weight: 300;
+                line-height: 1;
+                height: 60px;
+
+                @media screen and (min-width: $screen-xl) {
+                    display: inline;
+                }
+            }
+
+            &::before {
+                left: -70px;
+                top: -29px;
+                transform: rotate(180deg);
+            }
+
+            &::after {
+                bottom: -57px;
+                right: -28px;
+            }
+        }
+
+        &__name {
+            @include roboto-20;
+
+            &--role {
+                @include lato;
+                font-size: 1rem;
+                font-weight: 300;
+                display: block;
+                padding-left: 12px;
+            }
+        }
+
+        &__img {
+            max-width: 483px;
+            @media screen and (min-width: $screen-md) {
+                width: 35%;
+                display: block;
+                margin: -45% 0;
+                filter: drop-shadow(63px 1px 112px $primary-bg);
+            }
+            @media screen and (min-width: $screen-xl) {
+                width: 22vw;
+            }
+        }
+
+        &__article {
+            max-width: 628.5px;
+            @media screen and (min-width: $screen-md) {
+                width: 60%;
+            }
+            @media screen and (min-width: $screen-xl) {
+                width: 31vw;
+            }
+        }
+    }
+
+    .button {
+        display: block;
+        margin-top: 3em;
+    }
+
+    .squares {
+        width: 20vw;
+        height: auto;
+        right: -28px;
+        top: -60px;
+        z-index: -1;
+        filter: drop-shadow(-109px -23px 278px $highlight);
+
+        @media screen and (min-width: $screen-md) {
+            top: unset;
+        }
+
+        @media screen and (min-width: $screen-xl) {
+            width: initial;
+            right: -18.43vw;
+        }
+    }
+}
