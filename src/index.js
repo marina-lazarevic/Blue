@@ -10,6 +10,7 @@ import player from './assets/player.png';
 import ball from './assets/player-ball.png'
 
 import './js/slider';
+import gsap from 'gsap';
 
 document.querySelector('#hero-img').src = hero_img;
 
@@ -26,3 +27,7 @@ document.querySelector('#ball-img').src = ball;
 document.querySelector('#trophy-img').src = trophy_img;
 document.querySelector('#about-img').src = about_img;
 document.querySelector('#goal-img').src = goal_img;
+
+document.querySelector('#close-popup').addEventListener('click', () => {
+        document.querySelector('#popup').style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
+})

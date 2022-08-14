@@ -1,0 +1,52 @@
+@use '../abstracts/index' as *;
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $highlight;
+    padding: 22px;
+    @include d-flex(flex-start, flex-start);
+    max-width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: clip-path .6s cubic-bezier(0.000, 0.395, 0.435, 1.010);
+    
+
+    @media screen and (min-width: $screen-lg) {
+        left: 4.06vw;
+        align-items: center;
+    }
+
+    &__text {
+        @include roboto-16;
+        font-weight: 300;
+    }
+
+    &__btn {
+        flex-shrink: 0;
+        width: 11px;
+        height: 11px;
+        position: relative;
+        @include d-flex(center, center);
+        margin: 2px 0 0 15px;
+    }
+
+    &__btn-bar {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $primary-light;
+
+        &:nth-of-type(1){
+            transform: rotate(45deg);
+        }
+
+        &:nth-of-type(2){
+            transform: rotate(-45deg);
+        }
+    }
+
+    &--hidden {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
