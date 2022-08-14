@@ -4,6 +4,26 @@
 
 $primary-font: 'Roboto';
 
+@mixin lato {
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin lato-14 {
+    @include lato();
+    font-size: 0.875rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: $secondary-light;
+}
+
+@mixin lato-18 {
+    @include lato();
+    font-size: 1.125rem;
+    line-height: 1.38;
+    font-weight: 400;
+    color: $secondary-light;
+}
+
 @mixin roboto-16 {
     font-size: 1rem;
     line-height: 1.56;
@@ -11,7 +31,7 @@ $primary-font: 'Roboto';
 }
 
 @mixin roboto-40 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-size: clamp(2rem, 5vw, 2.5rem);
     line-height: 1.25;
     font-weight: 300;
     color: $primary-light;

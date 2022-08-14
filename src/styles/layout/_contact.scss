@@ -55,8 +55,7 @@
 
     &__text {
         padding: 2.5em 0;
-        a {
-            color: $highlight;
+        .highligth {
             text-decoration: underline!important;
         }
 
