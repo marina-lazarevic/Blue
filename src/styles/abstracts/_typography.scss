@@ -37,6 +37,24 @@ $primary-font: 'Roboto';
     color: $primary-light;
 }
 
+h1, h2 {
+    &.bar {
+        position: relative;
+        width: fit-content;
+        padding-right: 9px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: .15em;
+            right: 0;
+            width: 3px;
+            height: .85em;
+            background-color: $highlight
+        }
+    }
+}
+
 h2 {
     @include roboto-40();
 }

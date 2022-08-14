@@ -1,0 +1,57 @@
+@use '../abstracts/index' as *;
+
+.about {
+    padding: 0 $spacing-sm;
+    margin-bottom: 150px;
+    @include d-flex(center, flex-start);
+    flex-wrap: wrap;
+    gap: 4vw;
+    
+    @media screen and (min-width: $screen-lg) {
+        padding: 0 24.6875vw 240px 12.81vw;
+        margin-bottom: 0;
+    }
+
+    &__article {
+        max-width: 642.7px;
+        @media screen and (min-width: $screen-md) {
+            width: 60%;
+        }
+        @media screen and (min-width: $screen-xl) {
+            width: 33.43vw;
+        }
+    }
+
+    &__img {
+        max-width: 465.72px;
+        @media screen and (min-width: $screen-md) {
+            width: 35%;
+            filter: drop-shadow(-63px 1px 112px $primary-bg);
+        }
+        @media screen and (min-width: $screen-xl) {
+            width: 24.21vw;
+        }
+    }
+
+    &__text {
+        @include lato;
+        margin: 0.9375em 0 2.125em 0;
+    }
+
+    .squares {
+        width: 20vw;
+        height: auto;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        filter: drop-shadow(-109px -23px 278px $highlight);
+
+        @media screen and (min-width: $screen-md) {
+            top: unset;
+        }
+
+        @media screen and (min-width: $screen-xl) {
+            width: initial;
+        }
+    }
+}
