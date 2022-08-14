@@ -3,3 +3,31 @@
 .squares {
     position: absolute;
 }
+
+.displaced-container {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+
+    .displaced {
+        display: block;
+        transform: translateY(100%);
+    }
+}
+
+.star-img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+
+    @media screen and (orientation: portrait) {
+        width: auto;
+        height: 100%;
+    }
+
+    @media screen and (orientation: landscape) {
+        width: 100vw;
+        height: auto;
+    }
+}
