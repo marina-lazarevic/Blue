@@ -77,28 +77,28 @@ gsap.to('.references__testimonial', {
 })
 
 
-// const config = { threshold: 0.5 };
+const config = { threshold: .6 };
 
-// let observer = new IntersectionObserver(function(entries, self) { 
-//   let targets = entries.map(entry => {
-//     if(entry.isIntersecting) {
-//       self.unobserve(entry.target);
-//       return entry.target;
-//     }
-//   });
+let observer = new IntersectionObserver(function(entries, self) { 
+  let targets = entries.map(entry => {
+    if(entry.isIntersecting) {
+      self.unobserve(entry.target);
+      return entry.target;
+    }
+  });
   
-//   fadeIn(targets);
-// }, config);
+  fadeIn(targets);
+}, config);
 
-// document.querySelectorAll('.card').forEach(box => {
-//     box.style.opacity = 0;
-//   observer.observe(box);
-// });
+document.querySelectorAll('.card').forEach(box => {
+    box.style.opacity = 0;
+  observer.observe(box);
+});
 
-// function fadeIn(targets) {
-//   gsap.to(targets, { 
-//     opacity: 1, 
-//     stagger: 0.1,
-//     ease: 'power3.ease' 
-//   });
-// }
+function fadeIn(targets) {
+  gsap.to(targets, { 
+    opacity: 1, 
+    stagger: 0.1,
+    ease: 'power3.ease' 
+  });
+}
