@@ -24,13 +24,6 @@
         @include roboto-30;
     }
 
-    &__title {
-        text-align: center;
-        @media screen and (min-width: $screen-md) {
-            text-align: left;
-        }
-    }
-
     .slider {
         position: relative;
         margin: 36px 0 49px;
@@ -101,17 +94,41 @@
             }
         }
 
-        &__img {
+        &__img-container {
+            overflow: hidden;
             max-width: 483px;
+            transform: rotate(45deg);
+            position: relative;
             @media screen and (min-width: $screen-md) {
                 width: 35%;
                 display: block;
-                margin: -45% 0;
                 filter: drop-shadow(63px 1px 112px $primary-bg);
             }
             @media screen and (min-width: $screen-xl) {
                 width: 22vw;
             }
+
+            &::before {
+                content: "";
+                height: 0%;
+                left: 14%;
+                position: absolute;
+                bottom: 14%;
+                width: 72%;
+                z-index: 2;
+                background-color: $highlight;
+                transition: height .4s ease-out;
+            }
+
+            &--switching {
+                &::before {
+                    height: 72%;
+                }
+            }
+        }
+
+        &__img {
+            transform: rotate(-45deg);
         }
 
         &__article {
@@ -136,7 +153,7 @@
                 width: fit-content;
                 position: absolute;
                 left: -170px;
-                top: 36px;
+                top: 90px;
             }
         }
 

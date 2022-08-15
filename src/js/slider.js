@@ -12,15 +12,14 @@ let slider_timeline = gsap.timeline({defaults: {duration: .3, ease: 'power3.ease
 
 function fillSlide(testimonial){
     let { image, name, role, testimonial:article } = testimonial;
-    console.log(name);
     s_article.innerHTML = article;
     s_name.innerHTML = `- ${name} <span class="slider__name--role">${role}</span>`;
     s_image.src = image;
     s_image.alt = name;
 
     slider_timeline
-        .to('#slider .displaced', {y: 0, opacity: 1, stagger: .2})
-        .to(s_image, {y: 0, opacity: 1, delay: -0.3}) //for now
+        .to('#slider .hidden', {opacity: 1})
+        img_container.classList.remove('slider__img-container--switching')
 }
 
 let controls = document.createElement('div');
@@ -33,15 +32,17 @@ testimonials.forEach(slide => {
 slider.appendChild(controls);
 
 const indicators = slider.querySelectorAll('.slider__indicator');
+const img_container = slider.querySelector('.slider__img-container')
 
 for(let i = 0; i < indicators.length; i++){
     indicators[i].addEventListener('click', () => {
         document.querySelector('.slider__indicator--active').classList.remove('slider__indicator--active');
         indicators[i].classList.add('slider__indicator--active');
+        img_container.classList.add('slider__img-container--switching')
         slider_timeline
-        .to('#slider .displaced', {y: '40%', opacity: 0, stagger: .2})
-        .to(s_image, {y: '-20%', opacity: 0, delay: -0.5, duration: .4}) //for now
-        setTimeout(() => {fillSlide(testimonials[i])}, 350)
+        .to('#slider .hidden', {opacity: 0})
+
+        setTimeout(() => {fillSlide(testimonials[i])}, 400)
     });
 }
 

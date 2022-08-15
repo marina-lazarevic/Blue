@@ -41,6 +41,12 @@
         }
     }
 
+    &__title-line:last-of-type {
+        @media screen and (max-width: $screen-sm) {
+            width: min-content;
+        }
+    }
+
     &__title-wrapper {
         max-width: 603px;
     }

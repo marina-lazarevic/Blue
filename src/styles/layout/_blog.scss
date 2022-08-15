@@ -68,6 +68,7 @@
     }
 
     .post {
+        //opacity: 0;
         scroll-snap-align: center;
         flex-shrink: 0;
         @include d-flex(flex-start, flex-end);

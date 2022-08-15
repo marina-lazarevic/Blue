@@ -13,6 +13,8 @@ import './js/slider';
 import './js/nav';
 
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 document.querySelector('#hero-img').src = hero_img;
 
@@ -39,5 +41,64 @@ let hero_margin = () => {
     document.querySelector('#hero').style.marginTop = `${hero_margin_top}px`;
 }
 
-window.addEventListener('resize', hero_margin)
-window.addEventListener('load', hero_margin)
+window.addEventListener('resize', hero_margin);
+window.addEventListener('load', hero_margin);
+
+gsap.to('#ball-img', {
+    scrollTrigger: {
+        trigger: '#ball-img',
+        scrub: 1,
+    },
+    rotate: -90,
+    x: -20,
+    ease: 'power3.easeOut'
+})
+
+document.querySelectorAll('.square--sm').forEach(square => {
+    gsap.to(square, {
+        scrollTrigger: {
+            trigger: square,
+            scrub: 1,
+        },
+        yPercent: -50,
+        duration: 2,
+        ease: 'power3.easeOut'
+    })
+})
+
+gsap.to('.references__testimonial', {
+    scrollTrigger: {
+        trigger: '.references__testimonial',
+        scrub: 1,
+    },
+    yPercent: -40,
+    duration: 2,
+    ease: 'power3.easeOut'
+})
+
+
+// const config = { threshold: 0.5 };
+
+// let observer = new IntersectionObserver(function(entries, self) { 
+//   let targets = entries.map(entry => {
+//     if(entry.isIntersecting) {
+//       self.unobserve(entry.target);
+//       return entry.target;
+//     }
+//   });
+  
+//   fadeIn(targets);
+// }, config);
+
+// document.querySelectorAll('.card').forEach(box => {
+//     box.style.opacity = 0;
+//   observer.observe(box);
+// });
+
+// function fadeIn(targets) {
+//   gsap.to(targets, { 
+//     opacity: 1, 
+//     stagger: 0.1,
+//     ease: 'power3.ease' 
+//   });
+// }
