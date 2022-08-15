@@ -102,3 +102,12 @@ function fadeIn(targets) {
     ease: 'power3.ease' 
   });
 }
+
+let loader_timeline = gsap.timeline({defaults: {duration: .3, ease: 'power3.easeOut', delay: .5}})
+
+window.addEventListener('DOMContentLoaded', () => {
+  loader_timeline
+    .to('.loader__square', {'animation': 'none', duration: .1})
+    .to('.loader__square', {'clip-path': 'polygon(50% 50%, 100% 50%, 50% 50%, 0% 50%)', delay: .2})
+    .to('.loader', {height: 0, delay: .2, duration: .4} )
+})

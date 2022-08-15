@@ -7,6 +7,9 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <div class="loader">
+      <div class="loader__square"></div>
+    </div>
     <%= require('html-loader!./partials/header.html').default %>
     <main>
       <%= require('html-loader!./partials/hero.html').default %>
